@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
     RouterModule ]
 })
 export class HomeComponent {
-  constructor(private router: Router) { }
+  constructor(private router : Router) { }
 
   navigateToComponent() {
     // Навигация к другому компоненту

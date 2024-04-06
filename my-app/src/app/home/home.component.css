@@ -51,10 +51,13 @@ header.headerHome{
 }
 
 /* menu */
-.menu{
-    width: 1024px; /* Задаем ширину дива в пикселях */
-    max-width: 1024px; /* Ограничиваем максимальную ширину дива */
+main{
+    width: 1024px;
+    max-width: 1024px; 
     margin: 0 auto;
+}
+.menu{
+
     box-sizing: border-box;
     position: relative;
     display: flex;   
@@ -119,4 +122,24 @@ header.headerHome{
 
 .menu_links a img {
     transition: filter 0.3s ease; /* Добавление плавного эффекта перехода */
+}
+.tn-urgent{
+    background: linear-gradient(90deg, #32a801, #32a801 51%, #32a801);
+    display: grid;
+    padding: 0 5px;
+    align-items: center;
+    height: 40px;
+    grid-template-columns: auto 24px;
+    grid-gap: 8px;
+    text-decoration:none;
+}
+.tn-urgen-message{
+    font-family: Inter SemiBold;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: -.16px;
+    color: #fff;
+    text-align: center;
+    padding-left: 30px;
 }

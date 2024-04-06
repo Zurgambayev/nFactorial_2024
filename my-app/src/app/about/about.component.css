@@ -1,0 +1,105 @@
+.menu-open.active{
+    width: 1024px; 
+    height: 100%;
+    opacity: 1;   
+    transition: .4s;
+    z-index: 99;
+}
+.menu-opened {
+    position: absolute;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    background: #fff;   
+}
+.menu-open a {
+    color: black;
+    text-decoration: none;
+}
+.menu-opened_search {
+    margin: 20px 0 32px;
+}
+.menu-opened_search_text {
+    width: 94%;
+    padding: 7px 12px;
+    border: 1px solid #d4d5d7;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.menu-opened_projects {
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 0 5vh;
+}
+.menu-opened_projects_item {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    max-width: 154px;
+}
+.menu-opened.active a {
+    color: #000;
+}
+.menu-opened_projects_item .a_hover {
+    min-height: 80px;
+}
+.news img {
+    border-bottom:4px solid #00ab25;
+}
+.menu-opened_projects_item img {
+    margin: 0 0 24px;
+    padding: 0 0 20px;
+}
+.menu-opened_projects_item span {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-family: Inter Medium;
+    line-height: 20px;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.menu-opened.active a {
+    color: #000;
+    text-decoration: none;
+}
+.life img{
+    border-bottom: 4px solid #00c5b0;
+}
+.sport img{
+    border-bottom: 4px solid red;
+}
+
+.travel img{
+    border-bottom: 4px solid rgb(7, 70, 195);
+}
+.guide img{
+    border-bottom: 4px solid rgb(10, 204, 84);
+}
+.edu img{
+    border-bottom: 4px solid rgb(204, 126, 10);
+}
+
+.menu_opened_links {
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+}
+.menu_opened_links img {
+    margin-right: 70px; /* Добавляем небольшое расстояние между логотипом и ссылками */
+}
+.menu_opened_links a{
+    margin-right: 19px;
+}
+.menu_opened_links{
+    border-top:1px solid black;
+}
+/* img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+} */
