@@ -1,4 +1,4 @@
-<body>
+<div class="Global">
     <div>
         <header class="headerHome">
             <div class="header_sub container">
@@ -21,7 +21,8 @@
             <div class="menu">
                 <div class="menu_nav">
                     <div class="menu_burger active" (click)="navigateToComponent()">
-                       <a [routerLink]="['/about']"><img src="https://tengrinews.kz/edu/img/burger.svg" alt=""></a> 
+                       <a><img src="https://tengrinews.kz/edu/img/burger.svg" alt="" *ngIf="this.flag"></a> 
+                       <a><img src="https://tengrinews.kz/edu/img/burger-x.svg" alt="" *ngIf="!this.flag"></a> 
                     </div>
                     <a class="menu_logo" href=""> <img src="https://tengrinews.kz/tengri_new/img/logo.svg" alt=""></a>
                     <a class="menu_nav_item" href="">Новости</a>
@@ -38,6 +39,121 @@
                     Подписывайтесь на канал Tengrinews.kz в WhatsApp
                 </div>
             </a>
+            <div class="menu-open active" *ngIf="!this.flag">
+                <form class="menu-opened_search" action="">
+                    <input class="menu-opened_search_text" type="search" name="text" placeholder="Найти в TengriNews">
+                    <input class="menu-opened_search_submit" type="submit" value="Поиск">
+                </form>
+                <div class="menu-opened_projects">
+                    <div class="menu-opened_projects_item">
+                        <a class="news a_hover" href="https://tengrinews.kz/"><img src="https://tengrinews.kz/edu/img/header-tengri.svg"></a>
+                        <span><a href="https://tengrinews.kz/">Новости</a></span>
+                        <span><a href="https://tengrinews.kz/read/">Почитай</a></span>
+                        <span><a href="https://tengrinews.kz/listen/">Послушай</a></span>
+                        <span><a href="https://tengrinews.kz/tv/">TengriTV</a></span>
+            
+                    </div>
+                    <div class="menu-opened_projects_item">
+                        <a class="life a_hover" href="https://tengrinews.kz/mixnews/"><img src="https://tengrinews.kz/edu/img/header-life.svg"></a>
+                        <span><a href="/handsomely/">Красиво</a></span>
+                        <span><a href="/profitably/">Выгодно</a></span>
+                        <span><a href="/healthy/">Полезно</a></span>
+                        <span><a href="/curious/">Любопытно</a></span>
+                        <span><a href="/horoscopes/">Гороскопы</a></span>
+                    </div>
+                    <div class="menu-opened_projects_item">
+                        <a class="sport a_hover" href="https://tengrinews.kz/tengri-sport/"><img src="https://tengrinews.kz/edu/img/header-sport.svg"></a>
+                        <span><a href="https://tengrisport.kz/">Спорт</a></span>
+                        <span><a href="https://tengrisport.kz/around_sports/">Вокруг спорта</a></span>
+                        <span><a href="https://tengrisport.kz/trends/">Тренды</a></span>
+                        <span><a href="https://tengrisport.kz/champions-league/">Лига чемпионов</a></span>
+                    </div>
+                    <div class="menu-opened_projects_item">
+                        <a class="travel a_hover" href="https://tengritravel.kz/"><img src="https://tengrinews.kz/edu/img/header-travel.svg"></a>
+                        <span><a href="https://tengritravel.kz/my-country/">Моя страна</a></span>
+                        <span><a href="https://tengritravel.kz/around-the-world/">Вокруг света</a></span>
+                        <span><a href="https://tengritravel.kz/travel-notes/">Путевые заметки</a></span>
+                        <span><a href="https://tengritravel.kz/zailiyskiy-alatau-routes/">Маршруты Заилийского Алатау</a></span>
+                        <span><a href="https://tengritravel.kz/sayakhat-time/">Саяхат Time</a></span>
+                    </div>
+                    <div class="menu-opened_projects_item">
+                        <a class="guide a_hover" href="https://tengrinews.kz/"><img src="https://tengrinews.kz/guide/img/header-guide.svg"></a>
+                        <span><a href="/guide-info">Полезная информация</a></span>
+                        <span> <a href="/guidehosts">Где остановиться</a></span>
+                        <span><a href="/guidefoods">Где поесть</a></span>
+                        <span><a href="/guide-view_objects">Что посмотреть</a></span>
+                        <span><a href="/guideleisure">Чем заняться</a></span>
+                        <span><a href="/guideshops">Что купить</a></span>
+                        <span><a href="/guideroutes">Маршруты</a></span>
+                    </div>
+                    <div class="menu-opened_projects_item">
+                        <a class="edu a_hover" href="tengri-education/"><img src="https://tengrinews.kz/guide/img/header-edu.svg"></a>
+                        <span><a href="/guideroutes">Новости</a></span>
+                        <span><a href="/educationscience">Образование</a></span>
+                        <span><a href="/tengri-institutions">Учебные заведения</a></span>
+                    </div>
+                    <div class="menu-opened_projects_item">
+                        <a class="news" href="https://tengriauto.kz/"><img src="https://tengrinews.kz/edu/img/header-auto.svg"></a>
+                        <span><a href="/news/">Новости</a></span>
+                        <span><a href="/read/">Почитай</a></span>
+                        <span><a href="/find-out/">Посмотри</a></span>
+            
+                    </div>
+                </div>
+                <div class="menu_opened_links">
+                    <img src="https://tengrinews.kz/tengri_new/img/logo.svg" alt="">
+                    <a href="">О проекте</a>
+                    <a href="">Контакты редакции</a>
+                    <a href="">Вакансии</a>
+                    <a href="">Реклама</a>
+                </div>
+            </div>
+            <section class="three-column first" *ngIf="this.flag">
+                <div class="rigth_news">
+                    <div class="main-news_super_item">
+                        <a href="">
+                            <picture>
+                                <source srcset="https://tengrinews.kz/userdata/news/2024/news_531441/thumb_m/photo_467960.jpeg" type="image/jpeg">
+                                <source media="(max-width: 640px)" srcset="https://tengrinews.kz/userdata/news/2024/news_531441/thumb_m/photo_467960.jpeg" type="image/jpeg">
+                                <img class="main-news_top_item_img" loading="lazy" src="https://tengrinews.kz/userdata/news/2024/news_531441/thumb_m/photo_467960.jpeg" alt="Фото пресс-службы Акорды">
+                            </picture>
+                        </a>
+                        <span class="main-news_super_item_title">
+                            <a href="">Обращение Токаева к народу Казахстана: видео</a>
+                        </span>
+                        <div class="main-news_super_item_meta">
+                            <span>
+                                <time>Сегодня 13:00</time>
+                            </span> 
+                            <!-- есть еще просмотры и комменты -->
+                        </div>
+                        <div class="main-news_super_item">
+                            <a href="/kazakhstan_news/turtsiya-vyirazila-gotovnost-okazat-pomosch-kazahstanu-531527/">
+                                <picture>
+                                    <source srcset="https://tengrinews.kz/userdata/news/2024/news_531527/thumb_m/photo_468061.jpeg" type="image/jpeg">
+                                    <source media="(max-width: 640px)" srcset="https://tengrinews.kz/userdata/news/2024/news_531527/thumb_m/photo_468061.jpeg" type="image/jpeg">
+                                    <img class="main-news_top_item_img" loading="lazy" src="https://tengrinews.kz/userdata/news/2024/news_531527/thumb_m/photo_468061.jpeg" alt="©️ instagram/tjm_mchs">
+                                 </picture>  
+                            </a>
+                            <span class="main-news_super_item_title">
+                                <a href="/kazakhstan_news/turtsiya-vyirazila-gotovnost-okazat-pomosch-kazahstanu-531527/">Турция выразила готовность оказать помощь Казахстану</a>
+                            </span>
+                            <div class="main-news_super_item_meta">
+                                <span>
+                                    <time>Вчера 23:14</time>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input checked="" id="tab-btn-1" name="tab-btn" type="radio" value="">
+                    <label for="tab-btn-1">Последние</label>
+                    <input checked="" id="tab-btn-1" name="tab-btn" type="radio" value="">
+                    <label for="tab-btn-2">Популярные</label>
+                </div>
+
+            </section>
         </main>
     </div>
-</body>
+</div>
