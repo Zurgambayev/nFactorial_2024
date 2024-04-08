@@ -108,52 +108,31 @@
                     <a href="">Реклама</a>
                 </div>
             </div>
-            <section class="three-column first" *ngIf="this.flag">
-                <div class="rigth_news">
-                    <div class="main-news_super_item">
-                        <a href="">
-                            <picture>
-                                <source srcset="https://tengrinews.kz/userdata/news/2024/news_531441/thumb_m/photo_467960.jpeg" type="image/jpeg">
-                                <source media="(max-width: 640px)" srcset="https://tengrinews.kz/userdata/news/2024/news_531441/thumb_m/photo_467960.jpeg" type="image/jpeg">
-                                <img class="main-news_top_item_img" loading="lazy" src="https://tengrinews.kz/userdata/news/2024/news_531441/thumb_m/photo_467960.jpeg" alt="Фото пресс-службы Акорды">
-                            </picture>
-                        </a>
-                        <span class="main-news_super_item_title">
-                            <a href="">Обращение Токаева к народу Казахстана: видео</a>
-                        </span>
-                        <div class="main-news_super_item_meta">
-                            <span>
-                                <time>Сегодня 13:00</time>
-                            </span> 
-                            <!-- есть еще просмотры и комменты -->
-                        </div>
-                        <div class="main-news_super_item">
-                            <a href="/kazakhstan_news/turtsiya-vyirazila-gotovnost-okazat-pomosch-kazahstanu-531527/">
-                                <picture>
-                                    <source srcset="https://tengrinews.kz/userdata/news/2024/news_531527/thumb_m/photo_468061.jpeg" type="image/jpeg">
-                                    <source media="(max-width: 640px)" srcset="https://tengrinews.kz/userdata/news/2024/news_531527/thumb_m/photo_468061.jpeg" type="image/jpeg">
-                                    <img class="main-news_top_item_img" loading="lazy" src="https://tengrinews.kz/userdata/news/2024/news_531527/thumb_m/photo_468061.jpeg" alt="©️ instagram/tjm_mchs">
-                                 </picture>  
-                            </a>
-                            <span class="main-news_super_item_title">
-                                <a href="/kazakhstan_news/turtsiya-vyirazila-gotovnost-okazat-pomosch-kazahstanu-531527/">Турция выразила готовность оказать помощь Казахстану</a>
-                            </span>
-                            <div class="main-news_super_item_meta">
-                                <span>
-                                    <time>Вчера 23:14</time>
-                                </span>
+            <div class="global_news_lent">
+                <div class="news_lent">
+                  <div class="news_lent_right">
+                    <div class="for" *ngFor="let news of newss; let i = index">
+                        <div *ngIf="i + 1 == 1; else otherContent">
+                            <div class="news_big{{i}}">
+                              <img src="{{news.image}}" alt="">
+                              <span class="super_item{{i}}"><a href="{{news.url}}">{{news.title}}</a></span>
                             </div>
+                          </div>
+                          <ng-template #otherContent>
+                            <div class="little_news">
+                              <div class="news_litle">
+                                <img src="{{news.image}}" alt="">
+                                <span class="super_item{{i}}"><a href="{{news.url}}">{{news.title}}</a></span>
+                              </div>
+                            </div>
+                          </ng-template>
                         </div>
                     </div>
+                  <div class="news_lent_scroller">
+                    <!-- Контент скроллера -->
+                  </div>
                 </div>
-                <div class="tab">
-                    <input checked="" id="tab-btn-1" name="tab-btn" type="radio" value="">
-                    <label for="tab-btn-1">Последние</label>
-                    <input checked="" id="tab-btn-1" name="tab-btn" type="radio" value="">
-                    <label for="tab-btn-2">Популярные</label>
-                </div>
-
-            </section>
+            </div>
         </main>
     </div>
 </div>

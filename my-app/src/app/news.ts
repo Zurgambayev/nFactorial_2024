@@ -56,8 +56,10 @@ export const newss  = [
         "date_time": "15 января 2023, 15:34",
         "image": "http://tengrinews.kz/userdata/news/2023/news_488580/thumb_xms/photo_418926.jpeg",
         "url": "http://tengrinews.kz/crime/zaderjanyi-podozrevaemyie-podjoge-mashinyi-dinaryi-488580/"
-    },
-    {
+    }
+]
+export const newss2 = [
+ {
         "title": "Пожар на складе в Алматы потушен - ДЧС",
         "description": "Пожар на складе в Алматы потушен, передает Tengrinews.kz со ссылкой на ДЧС города.",
         "date_time": "15 января 2023, 13:39",
