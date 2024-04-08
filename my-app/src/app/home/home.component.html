@@ -111,25 +111,49 @@
             <div class="global_news_lent">
                 <div class="news_lent">
                   <div class="news_lent_right">
-                    <div class="for" *ngFor="let news of newss; let i = index">
-                        <div *ngIf="i + 1 == 1; else otherContent">
-                            <div class="news_big{{i}}">
-                              <img src="{{news.image}}" alt="">
-                              <span class="super_item{{i}}"><a href="{{news.url}}">{{news.title}}</a></span>
+                    <div class="par_big">
+                        <div class="news_big0">
+                            <img src="{{newss[0].image}}" alt="">
+                            <span class="super_item0"><a href="{{newss[0].url}}">{{newss[0].title}}</a></span>
+                            <div>
+                                <span> <p>"{{newss[0].date_time}}"</p></span>
                             </div>
-                          </div>
-                          <ng-template #otherContent>
-                            <div class="little_news">
-                              <div class="news_litle">
-                                <img src="{{news.image}}" alt="">
-                                <span class="super_item{{i}}"><a href="{{news.url}}">{{news.title}}</a></span>
-                              </div>
-                            </div>
-                          </ng-template>
                         </div>
                     </div>
+                    <div class="news_little">
+                        <div class="par_little">
+                            <div class="for" *ngFor="let news of newss.slice(1); let i = index"> 
+                                <img src="{{news.image}}" alt="">
+                                <span class="super_item"><a href="{{news.url}}">{{news.title}}</a></span>
+                                <div>
+                                    <span> <p>"{{news.date_time}}"</p></span>
+                                </div>
+                             </div>
+                        </div>
+
+                    </div>
+                    </div>
+                    
                   <div class="news_lent_scroller">
-                    <!-- Контент скроллера -->
+                    <div class="tab-btn-container">
+                        <input checked id="tab-btn-1" name="tab-btn" type="radio" value="latest">
+                        <label for="tab-btn-1">Последние</label>
+                      
+                        <input id="tab-btn-2" name="tab-btn" type="radio" value="popular">
+                        <label for="tab-btn-2">Пoпулярные</label>
+                      </div>
+                    <div class="tab_content">
+                        <div class="one_news" *ngFor="let item of array; let i = index">
+                            <span class="main-news_top_item_title">
+                                <a href="/kazakhstan_news/sklad-s-pokryishkami-zagorelsya-v-astane-531658/">Склад с покрышками загорелся в Астане</a>
+                            </span>
+                            <div class="main-news_top_item_meta">
+                                <span>
+                                    <time>Сегодня 00:09</time>
+                                </span>
+                             </div>
+                        </div>
+                    </div>
                   </div>
                 </div>
             </div>

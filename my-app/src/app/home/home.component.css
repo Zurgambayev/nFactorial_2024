@@ -1,7 +1,9 @@
 
 .Global{
-    /* background-color: #f1f2f1;
-    font-family: Inter; */
+    width: 100%;
+    height: 3000px;
+    background-color: #edeeed;
+    font-family: Inter;
 }
 
 .Global a {
@@ -249,78 +251,159 @@ a:-webkit-any-link {
 .menu_opened_links{
     border-top:1px solid black;
 }
-/* img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-} */
-
 
 
 
 .global_news_lent{
-    width: 100%;
-    height: 1000px;
-    margin-top: 10px;
-    
-    
+    width: 100%; /* Устанавливаем ширину 100% */
+    height: 1000px; /* Устанавливаем высоту 1000px */
+     /* Добавляем отступ сверху */
+     position: relative;
 }
-  
+
 .news_lent{
-    position: relative; 
-    width: 100%;
-    height: 100%;
-    border:solid 4px #000;
-    /* display: flex;
-    flex-direction: column; */
+    position: absolute;
+    margin-top: 20px;
+    position: relative;/*  Устанавливаем позиционирование relativeу */
+    width: 100%; /* Устанавливаем ширину 100% */
+    /* border:solid 4px #000; Устанавливаем пунктирную рамку */
+    background-color: #ffffff;
+    display: flex; 
+    overflow: hidden;
+    border-radius: 10px;
 }
 .news_lent_scroller{
-    margin-left: 74.5%;
-    position: absolute;
-    width: 25%;
-    height: 90%;
-    border:solid 4px #dc1414;
-}
-.news_lent_right{
-    position: absolute;
-    width: 70%;
-    height: 100%;
-    /* order: 1; */
-    border:solid 4px #4dc416;
+    margin-top: 10px;
+    margin-left: 74.5%; /* Устанавливаем отступ слева в 74.5% */
+    position: absolute; /* Устанавливаем абсолютное позиционирование */
+    width: 25%; /* Устанавливаем ширину 25% */
+    height: 100%; /* Устанавливаем высоту 90% */
+    /* border:solid 4px #dc1414; Устанавливаем пунктирную рамку */
 }
 
+
+.news_lent_right{
+    margin-top: 10px;
+    width: 70%; /* Устанавливаем ширину 70% */
+    height: 100%; /* Устанавливаем высоту 100% */
+    /* border:solid 4px #4dc416; Устанавливаем пунктирную рамку */
+    overflow: hidden;
+}
+.par_big{
+    height: 30%;
+    width: 90%;
+    margin-left: 10px;
+}
+.news_big0{
+    width: 100%;
+    display: block; /* Разместить каждый в своей строке */
+    margin-bottom: 10px; /* Добавить отступ между контейнерами */
+    position: relative; /* Для правильного позиционирования вложенных элементов */
+    overflow: hidden; /* Предотвращаем выход содержимого за пределы контейнера */
+    display: inline-block; /* Для того, чтобы элементы выравнивались в строку */
+}
 .news_big0 img{
     width: 100%;
-    overflow: hidden;
-    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .7));
-    border-radius: 4px;
-}
-.news_big0 {
-    position: relative; /* Сделаем родительский контейнер относительным */
+    display: block; /* Разместить каждый в своей строке */
+    margin-bottom: 10px; /* Добавить отступ между контейнерами */
+    display: block; /* Убираем пробелы, которые могут возникнуть вокруг изображения */
+    width: 100%; /* Чтобы изображение занимало всю доступную ширину */
+    height: auto; /* Автоматический подбор высоты для сохранения пропорций */
 }
 .super_item0 {
-    position: absolute; /* Установим абсолютное позиционирование для span */
-    top: 70%; /* Положим его сверху относительно родителя */
-    left: 5%; /* Положим его слева относительно родителя */
-    /* Прозрачный фон */
-    padding: 5px; /* Добавим отступы для лучшего визуального отображения */
-    z-index: 1; /* Установим z-index, чтобы span был поверх img */
+    
+    position: absolute; /* Позиционируем элемент абсолютно внутри родительского контейнера */
+    top: 0; /* Располагаем элемент относительно верхнего края родительского контейнера */
+    left: 0; /* Располагаем элемент относительно левого края родительского контейнера */
+    color: aliceblue;
+    padding: 19px; /* Добавляем отступы для текста */
 }
-.super_item0  a{
-   color: #ffffff;
-   font-size: 30px;
-   font-weight: bold;
+.super_item0 a{
+    
+    color: aliceblue;
+   font-size: 20px;
 }
 
-.little_news {
+.news_little{
+    width: 100%;
+    /* border: 3px solid rgb(14, 55, 217); */
+    overflow: hidden; /* Предотвращаем выход содержимого за пределы контейнера */
+    /* display: inline-block; Для того, чтобы элементы выравнивались в строку */
+}
+.par_little{
+    width: 100%;
+    position: relative; /* Для правильного позиционирования вложенных элементов */
+    overflow: hidden; /* Предотвращаем выход содержимого за пределы контейнера */
+    display: inline-block; /* Для того, чтобы элементы выравнивались в строку */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.for{
+    width: 40%;
+    padding: 10px;
+    position: relative; /* Для правильного позиционирования вложенных элементов */
+    overflow: hidden; /* Предотвращаем выход содержимого за пределы контейнера */
+    display: inline-block; /* Для того, чтобы элементы выравнивались в строку */
+}
+
+
+.super_item {
+    top: 0; /* Располагаем элемент относительно верхнего края родительского контейнера */
+    left: 0; /* Располагаем элемент относительно левого края родительского контейнера */
+    color: aliceblue;
+    padding: 19px; /* Добавляем отступы для текста */
+}
+.super_item a{
+    
+    color: black;
+   font-size: 18px;
+}
+
+
+
+
+
+
+.tab-btn-container {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 10px;
   }
 
-  .news_litle {
-    width: 50%; /* Половина ширины родительского контейнера */
-    box-sizing: border-box; /* Учитываем отступы в расчете размера элемента */
+  .tab-btn-container label {
+    padding: 5px 10px;
+    cursor: pointer;
   }
 
-/* @media screen and (max-width: 768px) {
-    .news_lent {
-        flex-direction: column-reverse; /* При уменьшении экрана меняем направление flex на обратное */
-    /* } */
-/* }/* */
+
+  .tab-btn-container input[type="radio"] {
+    display: none;
+  }
+
+  .tab-btn-container input[type="radio"]:checked + label {
+    background-color: #20ac1c;
+  }
+
+  .one_news{
+    margin: auto;
+    border-top: solid 0.5px black;
+    width: 90%;
+    margin-top: 5px;
+  }
+  .one_news a{
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .tab_content {
+    height: 60%; /* Фиксированная высота */
+    overflow-y: auto; /* Скроллируемость по вертикали */
+    border: 1px solid #ccc; /* Добавляем рамку для наглядности */
+    padding: 10px; /* Добавляем отступы */
+}
+.main-news_top_item_meta{
+    margin-top: 10px;
+}
+
