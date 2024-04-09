@@ -9,4 +9,4 @@ services:
     envVars:
     buildFilter:
       paths:
-      - app/**
+      - parser/**
