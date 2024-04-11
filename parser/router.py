@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 import aiofiles
 import json
 import datetime
@@ -10,6 +10,7 @@ from service_detail import parse_website_detail
 router = APIRouter()
 
 file_path = 'parsed_data.json'
+file_path_detail = 'parsed_data_detail.json'
 date1 = datetime.datetime.now()
 
 class Item(BaseModel):
@@ -24,10 +25,10 @@ async def get_pages():
     return articles   
 
 @router.get('/pages/detail/')
-async def get_page_detail(item: Item):
-    parse_website_detail(url=item.url)
-    async with aiofiles.open(file_path, mode='r', encoding='utf-8') as json_file:
+async def get_page_detail(url: str = Query(...)):
+    parse_website_detail(url=url)
+    async with aiofiles.open(file_path_detail, mode='r', encoding='utf-8') as json_file:
         data = await json_file.read()
     articles = json.loads(data)
-    return articles   
+    return articles 
 
