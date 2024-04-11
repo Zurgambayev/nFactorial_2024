@@ -1,15 +1,11 @@
 <div class="Global">
-    <div>
+    <div class="main_global">
         <header class="headerHome">
             <div class="header_sub container">
                 <div class="headerComponent">
                     <a href="">NEWS</a>
-                    <a href="">LIFE</a>
-                    <a href="">SPORT</a>
-                    <a href="">TRAVEL</a>
-                    <a href="">GUIDE</a>
-                    <a href="">EDU</a>
-                    <a href="">AUTO</a>
+                    <a [routerLink]="['/travel']" href="">TRAVEL</a>
+                   
                 </div>
                 <div class="headerComponent2">
                     <a class="header_sub_links_item" href="https://tengrinews.kz/page/contact/">Редакция<img src="https://tengrinews.kz/tengri_new/img/phone.svg"> +7 (777) 777 77 77</a>
@@ -108,12 +104,12 @@
                     <a href="">Реклама</a>
                 </div>
             </div>
-            <div class="global_news_lent">
+            <div class="global_news_lent" *ngIf="this.flag">
                 <div class="news_lent">
                   <div class="news_lent_right">
                     <div class="par_big">
                         <div class="news_big0">
-                            <img src="{{newss[0].image}}" alt="">
+                            <img src="{{newss[0].image}}" alt="" [routerLink]="['/news1']">
                             <span class="super_item0"><a href="{{newss[0].url}}">{{newss[0].title}}</a></span>
                             <div>
                                 <span> <p>"{{newss[0].date_time}}"</p></span>
@@ -132,8 +128,7 @@
                         </div>
 
                     </div>
-                    </div>
-                    
+                </div>    
                   <div class="news_lent_scroller">
                     <div class="tab-btn-container">
                         <input checked id="tab-btn-1" name="tab-btn" type="radio" value="latest">
@@ -155,6 +150,39 @@
                         </div>
                     </div>
                   </div>
+                </div>
+            </div>
+            <div class="global_news_lent2" *ngIf="this.flag2">
+                <div class="sub_head">
+                    <h2>Cтатьи</h2>
+                    <img src="https://tengrinews.kz/tengri_sport/img/head-arrow.svg" alt="">
+                    <span class="subhead-tags">
+                        <a href="/article/" class="subhead-tags_read">Статьи</a>
+                        <a href="/conference/" class="subhead-tags_read">Интервью</a>
+                        <a href="/opinion/" class="subhead-tags_read">Блоги и мнения</a>
+                        <a href="/economic/" class="subhead-tags_read">Экономика</a>
+                        <a href="/culture/" class="subhead-tags_read">Культура</a>
+                        <a href="/medicine/" class="subhead-tags_read">Медицина</a>
+                        <a href="/science/" class="subhead-tags_read">Наука</a>
+                        <a href="/tech/" class="subhead-tags_read">Технологии</a>
+                    </span>
+                </div>
+                <div class="main_news">
+                    <div class="main_news_top">
+                        <div  class="for2" *ngFor="let news2 of newss2; let i = index">
+                            <div class="img_n">
+                                <a href="{{news2.url}}">
+                                    <img src="{{news2.image}}" alt="">
+                                </a>
+                            </div>
+                            <div class="refer">
+                                <a href="{{news2.url}}">{{news2.title}}</a>
+                            </div>
+                            <div class="date_comm">
+                                <span>{{news2.date_time}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

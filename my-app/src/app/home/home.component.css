@@ -51,15 +51,18 @@ header.headerHome{
 }
 .header_sub{
     display: flex; /* Расположить дочерние элементы в горизонтальной линии */
-    align-items: center; /* Выравнивание элементов по центру по вертикали */
+    align-items: center; 
     -webkit-box-pack: justify;
     justify-content: space-between;
     color: #fff;
 }
-
+.main_global{
+    height: 100%;
+}
 /* menu */
 main{
     width: 87%;
+    height: 100%;
     max-width: 87%px; 
     margin: 0 auto;
 }
@@ -256,7 +259,7 @@ a:-webkit-any-link {
 
 .global_news_lent{
     width: 100%; /* Устанавливаем ширину 100% */
-    height: 1000px; /* Устанавливаем высоту 1000px */
+    height: 1400px; /* Устанавливаем высоту 1000px */
      /* Добавляем отступ сверху */
      position: relative;
 }
@@ -349,8 +352,8 @@ a:-webkit-any-link {
 
 
 .super_item {
-    top: 0; /* Располагаем элемент относительно верхнего края родительского контейнера */
-    left: 0; /* Располагаем элемент относительно левого края родительского контейнера */
+    top: 0; 
+    left: 0; 
     color: aliceblue;
     padding: 19px; /* Добавляем отступы для текста */
 }
@@ -398,12 +401,75 @@ a:-webkit-any-link {
     margin-bottom: 10px;
   }
   .tab_content {
-    height: 60%; /* Фиксированная высота */
-    overflow-y: auto; /* Скроллируемость по вертикали */
-    border: 1px solid #ccc; /* Добавляем рамку для наглядности */
-    padding: 10px; /* Добавляем отступы */
+    height: 60%;
+    overflow-y: auto; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
 }
 .main-news_top_item_meta{
     margin-top: 10px;
 }
 
+
+
+
+.global_news_lent2{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.sub_head {
+    margin-top: 100px;
+    border-top:solid 2px #20ac1c;
+    margin-left: 10px;
+    display: flex; 
+    align-items: center; 
+}
+
+.subhead-tags {
+    display: flex; 
+    gap: 10px; 
+
+}
+
+.subhead-tags a {
+    text-decoration: none; 
+    color: black;
+}
+
+
+
+.img_n {
+    width: 200px;
+    height: 70px;
+
+}
+
+.img_n img {
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.main_news_top {
+    display: flex; 
+    flex-wrap: nowrap;
+}
+
+.for2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+.refer {
+    margin-top: 50px;
+}
+
+.refer a{
+    color: black;
+    font-style: normal;
+}
+
+.date_comm{
+    color: #eaeaec;
+}

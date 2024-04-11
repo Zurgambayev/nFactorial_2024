@@ -86,8 +86,9 @@ export const newss2 = [
         "date_time": "13 января 2023, 20:42",
         "image": "http://tengrinews.kz/userdata/news/2023/news_488509/thumb_xms/photo_418852.jpeg",
         "url": "http://tengrinews.kz/kazakhstan_news/tsentralnyie-ulitsyi-almatyi-perekroyut-neskolko-dney-iz-za-488509/"
-    },
-    {
+    }
+]
+export const newss3 = [   {
         "title": "AZAL свяжет Астану и Баку",
         "description": "Авиакомпания AZAL открывает рейсы из Баку в Астану, а также в обратном направлении, сообщает Trend со ссылкой на пресс-службу ЗАО \"Азербайджанские",
         "date_time": "13 января 2023, 19:51",

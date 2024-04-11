@@ -1,0 +1,15 @@
+.headerGlobal{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(240, 240, 226);
+    border-radius:solid 1px 
+}
+
+.header{
+    position: relative;
+}
+.imgg{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 20px;
+}
