@@ -5,6 +5,8 @@ import { newss,newss2 } from '../news';
 import { Component} from '@angular/core';
 import {AfterViewInit} from '@angular/core';
 import {OnInit} from '@angular/core';
+import { HomeService } from '../home.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -14,39 +16,40 @@ import {OnInit} from '@angular/core';
   standalone: true,
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ]
 })
 export class HomeComponent{
-
-  newss = [...newss];
-  newss2 = [...newss2]
-  constructor(private router : Router) { }
+  newss: any[] = []; // Initialized as an empty array
+  newss2: any[] = []; // Initialized as an empty array
   flag = true;
   flag2 = true;
   count = 0;
-  count2 = 0
-  array =  [1,2,3,4,5,6,7,8,9,11,22,33,44,55,66,77,88,99]
+  count2 = 0;
+  titles = ["", "Aktualno", "Tengri Travel"]
+  array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99];
 
-  // ngOnInit(): void {
-  //   this.su();
-  // }
-  // su(){
-  //   this.count2 += 1 
-  //   // for (let i of this.newss) {
-  //   //   console.log(i);
-  //   // }
-  //   console.log(this.count2)
-  // }
+  constructor(private homeService: HomeService, private router: Router) { }
+
+  ngOnInit(): void {
+    // Call your service methods here to fetch data from the backend
+    this.homeService.getAllNews().subscribe(data => {
+      this.newss = data;
+      console.log(this.newss)
+    });
+
+    // Similarly, fetch newss2 or any other data you need
+  }
+
   navigateToComponent() {
     console.log(this.count)
-    if (this.count % 2 === 0){
-      this.flag = false
-      this.flag2 = false
-
-    }else{
-      this.flag = true
-      this.flag2 = true
+    if (this.count % 2 === 0) {
+      this.flag = false;
+      this.flag2 = false;
+    } else {
+      this.flag = true;
+      this.flag2 = true;
     }
     this.count++;
   }

@@ -109,20 +109,21 @@
                   <div class="news_lent_right">
                     <div class="par_big">
                         <div class="news_big0">
-                            <img src="{{newss[0].image}}" alt="" [routerLink]="['/news1']">
-                            <span class="super_item0"><a href="{{newss[0].url}}">{{newss[0].title}}</a></span>
+                            <img src="{{newss[0].image_url}}" alt="" [routerLink]="['/news1']">
+                            <!-- Routerlink: send news_url to news1 component -->
+                            <span class="super_item0"><a href="{{newss[0].newss_url}}">{{newss[0].title}}</a></span>
                             <div>
-                                <span> <p>"{{newss[0].date_time}}"</p></span>
+                                <span> <p>"{{newss[0].meta}}"</p></span>
                             </div>
                         </div>
                     </div>
                     <div class="news_little">
                         <div class="par_little">
                             <div class="for" *ngFor="let news of newss.slice(1); let i = index"> 
-                                <img src="{{news.image}}" alt="">
-                                <span class="super_item"><a href="{{news.url}}">{{news.title}}</a></span>
+                                <img src="{{news.image_url}}" alt="">
+                                <span class="super_item"><a href="{{news.news_url}}">{{news.title}}</a></span>
                                 <div>
-                                    <span> <p>"{{news.date_time}}"</p></span>
+                                    <span> <p>"{{news.meta}}"</p></span>
                                 </div>
                              </div>
                         </div>
