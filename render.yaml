@@ -6,6 +6,5 @@ services:
     repo: https://github.com/Zurgambayev/nFactorial_2024
     region: frankfurt
     branch: main
-    buildFilter:
-      paths:
-        - parser/Dockerfile
+    dockerfilePath: ./parser/Dockerfile
+    dockerContext: ./
