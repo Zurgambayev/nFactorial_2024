@@ -109,8 +109,9 @@
                   <div class="news_lent_right">
                     <div class="par_big">
                         <div class="news_big0">
-                            <img src="{{newss[0].image_url}}" alt="" [routerLink]="['/news1']">
+                            <img src="{{newss[0].image_url}}" alt="" [routerLink]="['/news1']" >
                             <!-- Routerlink: send news_url to news1 component -->
+
                             <span class="super_item0"><a href="{{newss[0].newss_url}}">{{newss[0].title}}</a></span>
                             <div>
                                 <span> <p>"{{newss[0].meta}}"</p></span>
@@ -119,13 +120,15 @@
                     </div>
                     <div class="news_little">
                         <div class="par_little">
-                            <div class="for" *ngFor="let news of newss.slice(1); let i = index"> 
-                                <img src="{{news.image_url}}" alt="">
-                                <span class="super_item"><a href="{{news.news_url}}">{{news.title}}</a></span>
-                                <div>
-                                    <span> <p>"{{news.meta}}"</p></span>
-                                </div>
-                             </div>
+                            <div class="for" *ngFor="let news of newss.slice(1); let i = index">
+                                <ng-container *ngIf="i >= 2 && i <= 7">
+                                  <img src="{{ news.image_url }}" alt="" [routerLink]="['/news1']" (click)="sendNewsUrl(news.news_url)">
+                                  <span class="super_item"><a href="{{ news.news_url }}" [routerLink]="['/news1']">{{ news.title }}</a></span>
+                                  <div>
+                                    <span><p>"{{ news.meta }}"</p></span>
+                                  </div>
+                                </ng-container>
+                            </div>
                         </div>
 
                     </div>
@@ -170,19 +173,20 @@
                 </div>
                 <div class="main_news">
                     <div class="main_news_top">
-                        <div  class="for2" *ngFor="let news2 of newss2; let i = index">
+                        <div class="for2" *ngFor="let news of newss.slice(8, 12); let i = index">
                             <div class="img_n">
-                                <a href="{{news2.url}}">
-                                    <img src="{{news2.image}}" alt="">
+                                <a href="{{news.news_url}}">
+                                    <img src="{{news.image_url}}" alt="">
                                 </a>
                             </div>
                             <div class="refer">
-                                <a href="{{news2.url}}">{{news2.title}}</a>
+                                <a href="{{news.news_url}}">{{news.title}}</a>
                             </div>
                             <div class="date_comm">
-                                <span>{{news2.date_time}}</span>
+                                <span>{{news.date_time}}</span>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

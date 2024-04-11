@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { HomeService } from '../home.service';
+import { Component, Input } from '@angular/core'; // First, import Input
 
 @Component({
   selector: 'app-news1',
@@ -11,7 +11,7 @@ import { HomeService } from '../home.service';
 export class News1Component {
 
   constructor(private homeService: HomeService) {}
-
+  @Input() newsUrl: string = '';
   ngOnInit(): void {
     const newsUrl = 'hnewsttp://example.com/'; // Replace with the actual news URL
     this.homeService.getNewsByUrl(newsUrl).subscribe(
@@ -22,5 +22,8 @@ export class News1Component {
         console.error('Error:', error);
       }
     );
+    if (this.newsUrl) {
+      console.log(this.newsUrl); 
+    }
   }
 }

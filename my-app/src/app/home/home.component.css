@@ -416,6 +416,7 @@ a:-webkit-any-link {
 .global_news_lent2{
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
+    margin-top: 1170px;
 }
 .sub_head {
     margin-top: 100px;
@@ -449,6 +450,7 @@ a:-webkit-any-link {
     height: auto;
     border-radius: 10px;
 }
+
 
 .main_news_top {
     display: flex; 

@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { newss,newss2 } from '../news';
-import { Component} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import {AfterViewInit} from '@angular/core';
 import {OnInit} from '@angular/core';
 import { HomeService } from '../home.service';
@@ -27,10 +27,12 @@ export class HomeComponent{
   flag2 = true;
   count = 0;
   count2 = 0;
+  array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99,100,111,1,];
   titles = ["", "Aktualno", "Tengri Travel"]
-  array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99];
+
 
   constructor(private homeService: HomeService, private router: Router) { }
+  @Output() newsUrlSent = new EventEmitter<string>();
 
   ngOnInit(): void {
     // Call your service methods here to fetch data from the backend
@@ -38,8 +40,14 @@ export class HomeComponent{
       this.newss = data;
       console.log(this.newss)
     });
+    this.homeService.getAllNews().subscribe(data => {
+      this.newss = data;
+    });
 
     // Similarly, fetch newss2 or any other data you need
+  }
+   sendNewsUrl(newsUrl: string) {
+    this.newsUrlSent.emit(newsUrl);
   }
 
   navigateToComponent() {
