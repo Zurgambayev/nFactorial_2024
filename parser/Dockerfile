@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip3 install -r requirement.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
