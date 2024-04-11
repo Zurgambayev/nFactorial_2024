@@ -4,8 +4,9 @@
 
         <div class='left'>
             <ul class="header-ul">
-                <li><a href="">Travel</a></li>
-           
+     
+                <li><a href="" >Travel</a></li>
+          
             </ul>
         </div>
     </div>
@@ -31,32 +32,37 @@
 
         <div class="time_container">
             <div class="time">
-                <p>ww</p>
+                <p>{{newss2.date_time}}</p>
             </div>
         </div>
 
         <div class="main_title">
-            <p></p>
+            <p>{{newss2.headline }}</p>
         </div>
 
         <div class='statistics'>
             <div class="view">
                 <img class='img' src="https://tengrinews.kz/tengri_new/img/circle-viewings.svg" alt="" />
-                <p class="number_of_view">kk</p>
-                <img src="https://tengrinews.kz/tengri_new/img/circle-comments.svg" alt="" className="img_comment" />
+                <p class="number_of_view"></p>
+                <img src="https://tengrinews.kz/tengri_new/img/circle-comments.svg" alt="" class="img_comment" />
                 <p class="number_of_comment">4</p>
-                <img src="https://tengrinews.kz/tengri_new/img/circle-share.svg" alt="" className="img_repost" />
+                <img src="https://tengrinews.kz/tengri_new/img/circle-share.svg" alt="" class="img_repost" />
             </div>
         </div>
 
         <div class="im_news">
-            <img src="" alt="Фото ©️ Tengrinews.kz / Турар Казангапов" />
+            <img src= "https://tengrinews.kz/{{newss2.image_url}}" alt="Фото ©️ Tengrinews.kz / Турар Казангапов" />
         </div>
 
         <div class="content">
-            <p></p>
+            <p>{{ newss2.text2_dict.paragraph_2 }}</p>
+            <p>{{ newss2.text2_dict.paragraph_3 }}</p>
+            <p>{{ newss2.text2_dict.paragraph_4 }}</p>
+            <p>{{ newss2.text2_dict.paragraph_5 }}</p>
+
         </div>
 
     </div>
+
 
 </div>

@@ -2,12 +2,12 @@ import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { newss,newss2 } from '../news';
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 import {AfterViewInit} from '@angular/core';
 import {OnInit} from '@angular/core';
 import { HomeService } from '../home.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { NewsSharingService } from '../news-sharing.service';
 
 @Component({
   selector: 'app-home',
@@ -20,9 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ]
 })
-export class HomeComponent{
+export class HomeComponent implements OnInit{
   newss: any[] = []; // Initialized as an empty array
-  newss2: any[] = []; // Initialized as an empty array
   flag = true;
   flag2 = true;
   count = 0;
@@ -31,7 +30,7 @@ export class HomeComponent{
   titles = ["", "Aktualno", "Tengri Travel"]
 
 
-  constructor(private homeService: HomeService, private router: Router) { }
+  constructor(private homeService: HomeService, private router: Router,private newsSharingService: NewsSharingService ){ }
   @Output() newsUrlSent = new EventEmitter<string>();
 
   ngOnInit(): void {
@@ -46,9 +45,11 @@ export class HomeComponent{
 
     // Similarly, fetch newss2 or any other data you need
   }
-   sendNewsUrl(newsUrl: string) {
-    this.newsUrlSent.emit(newsUrl);
+
+  sendNewsUrl(newsUrl: string) {
+    this.newsSharingService.changeNewsUrl(newsUrl);
   }
+
 
   navigateToComponent() {
     console.log(this.count)

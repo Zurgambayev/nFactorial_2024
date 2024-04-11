@@ -109,10 +109,9 @@
                   <div class="news_lent_right">
                     <div class="par_big">
                         <div class="news_big0">
-                            <img src="{{newss[0].image_url}}" alt="" [routerLink]="['/news1']" >
-                            <!-- Routerlink: send news_url to news1 component -->
-
-                            <span class="super_item0"><a href="{{newss[0].newss_url}}">{{newss[0].title}}</a></span>
+                            <img src="{{newss[0].image_url}}" alt="" [routerLink]="['/news1']" (click)="sendNewsUrl(newss[0].news_url)" >
+                            
+                            <span class="super_item0" ><a href="{{newss[0].newss_url}}">{{newss[0].title}} </a></span>
                             <div>
                                 <span> <p>"{{newss[0].meta}}"</p></span>
                             </div>
@@ -128,7 +127,7 @@
                                     <span><p>"{{ news.meta }}"</p></span>
                                   </div>
                                 </ng-container>
-                            </div>
+                              </div>
                         </div>
 
                     </div>

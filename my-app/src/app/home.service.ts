@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HomeService {
+  getNewsFromJson(jsonFilePath: string): Observable<any[]> {
+    return this.http.get<any[]>(jsonFilePath);
+  }
 
   private apiUrl = 'http://0.0.0.0:8000/pages/'; // Replace this with your actual backend API URL
 
@@ -22,5 +25,6 @@ export class HomeService {
     const url = `${this.apiUrl}detail/?url=${encodeURIComponent(newsUrl)}`;
     return this.http.get<any>(url);
   }
+
 
 }
